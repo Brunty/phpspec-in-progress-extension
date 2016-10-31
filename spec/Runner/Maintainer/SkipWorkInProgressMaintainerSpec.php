@@ -32,7 +32,7 @@ class SkipWorkInProgressMaintainerSpec extends ObjectBehavior
      * @param ExampleNode                 $example
      * @param \ReflectionFunctionAbstract $refFunction
      */
-    function it_supports_specification_that_has_doc_comment(
+    function it_supports_examples_that_have_doc_blocks(
         ExampleNode $example,
         \ReflectionFunctionAbstract $refFunction
     ) {
@@ -47,7 +47,7 @@ class SkipWorkInProgressMaintainerSpec extends ObjectBehavior
      * @param SpecificationNode           $specification
      * @param \ReflectionFunctionAbstract $refFunction
      */
-    function it_does_not_support_specification_that_does_not_have_doc_comment(
+    function it_does_not_support_examples_that_do_not_have_doc_blocks(
         ExampleNode $example,
         SpecificationNode $specification,
         \ReflectionFunctionAbstract $refFunction
@@ -65,14 +65,13 @@ class SkipWorkInProgressMaintainerSpec extends ObjectBehavior
      * @param MatcherManager              $matchers
      * @param CollaboratorManager         $collaborators
      */
-    function its_prepare_method_throws_skipping_exception_when_specification_is_work_in_progress(
+    function its_prepare_method_throws_a_skipping_exception_when_the_example_is_a_work_in_progress(
         ExampleNode $example,
         \ReflectionFunctionAbstract $refFunction,
         Specification $context,
         MatcherManager $matchers,
         CollaboratorManager $collaborators
-    )
-    {
+    ) {
         $example->getFunctionReflection()->willReturn($refFunction);
         $refFunction->getDocComment()->willReturn('/**\n* @wip\n*/');
 
@@ -87,7 +86,7 @@ class SkipWorkInProgressMaintainerSpec extends ObjectBehavior
      * @param MatcherManager              $matchers
      * @param CollaboratorManager         $collaborators
      */
-    function its_prepare_method_does_not_throw_exception_when_spec_does_not_implement_work_in_progress(
+    function its_prepare_method_does_not_throw_a_skipping_exception_when_the_example_is_not_a_work_in_progress(
         ExampleNode $example,
         \ReflectionFunctionAbstract $refFunction,
         Specification $context,
@@ -97,7 +96,12 @@ class SkipWorkInProgressMaintainerSpec extends ObjectBehavior
         $example->getFunctionReflection()->willReturn($refFunction);
         $refFunction->getDocComment()->willReturn('/**\n\n*/');
 
-        $this->shouldNotThrow('PhpSpec\Exception\Example\SkippingException')->duringPrepare($example, $context, $matchers, $collaborators);
+        $this->shouldNotThrow('PhpSpec\Exception\Example\SkippingException')->duringPrepare(
+            $example,
+            $context,
+            $matchers,
+            $collaborators
+        );
     }
 
     /**
@@ -107,17 +111,22 @@ class SkipWorkInProgressMaintainerSpec extends ObjectBehavior
      * @param MatcherManager              $matchers
      * @param CollaboratorManager         $collaborators
      */
-    function its_prepare_method_ignores_other_annotation(
+    function its_prepare_method_ignores_other_annotations_in_the_doc_block(
         ExampleNode $example,
         \ReflectionFunctionAbstract $refFunction,
         Specification $context,
         MatcherManager $matchers,
         CollaboratorManager $collaborators
-    ){
+    ) {
 
         $example->getFunctionReflection()->willReturn($refFunction);
         $refFunction->getDocComment()->willReturn('/**\n     * @author foo@example.com \n     */');
 
-        $this->shouldNotThrow('PhpSpec\Exception\Example\SkippingException')->duringPrepare($example, $context, $matchers, $collaborators);
+        $this->shouldNotThrow('PhpSpec\Exception\Example\SkippingException')->duringPrepare(
+            $example,
+            $context,
+            $matchers,
+            $collaborators
+        );
     }
 }
