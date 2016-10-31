@@ -1,5 +1,5 @@
 suites:
-    acme_suite:
+    main_suite:
         namespace: Brunty
         psr4_prefix: Brunty
 extensions:
