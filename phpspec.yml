@@ -1,0 +1,6 @@
+suites:
+    acme_suite:
+        namespace: Brunty
+        psr4_prefix: Brunty
+extensions:
+    Brunty\SkipWorkInProgressExtension: ~

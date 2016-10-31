@@ -1,0 +1,23 @@
+{
+  "name": "brunty/phpspec-skip-work-in-progress-extension",
+  "description": "Skips PhpSpec examples & specs that are tagged as a work-in-progress.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matt Brunt",
+      "email": "matt@mfyu.co.uk"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Brunty\\": "src/"
+    }
+  },
+  "require": {
+    "phpspec/phpspec": "^3.0"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "minimum-stability": "stable"
+}
