@@ -1,15 +1,19 @@
-Buzzword Job Title Provider for Faker
+PhpSpec Work In Progress Extension
 ====================
 
-[![Build Status](https://travis-ci.org/Brunty/faker-buzzword-job-titles.svg?branch=develop)](https://travis-ci.org/Brunty/faker-buzzword-job-titles)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/686edff0-47b0-413a-ad08-bedd66a7084e/mini.png)](https://insight.sensiolabs.com/projects/686edff0-47b0-413a-ad08-bedd66a7084e)
+[![Build Status](https://travis-ci.org/Brunty/phpspec-in-progress-extension.svg?branch=master)](https://travis-ci.org/Brunty/phpspec-in-progress-extension)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/e073ed3e-34a5-498b-a5af-93149709c30a/mini.png)](https://insight.sensiolabs.com/projects/e073ed3e-34a5-498b-a5af-93149709c30a)
 
+## Compatibility
+
+PhpSpec 3.0 and above
 
 ## Install
-Install the provider by adding `brunty/faker-buzzword-jobs` to your composer.json or from the command line:
+
+Run the following command:
 
 ```
-$ composer require brunty/faker-buzzword-jobs
+$ composer require brunty/phpspec-skip-work-in-progress-extension
 ```
 
 ## Usage
