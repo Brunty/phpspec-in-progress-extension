@@ -18,6 +18,8 @@ $ composer require brunty/phpspec-skip-work-in-progress-extension
 
 ## Usage
 
+Add a `@wip` annotation to a docblock for the example you're working on.
+
 ```php
 class MultiplierSpec extends ObjectBehavior
 {
