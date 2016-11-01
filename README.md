@@ -1,7 +1,7 @@
 PhpSpec Work In Progress Extension
 ====================
 
-[![Build Status](https://travis-ci.org/Brunty/phpspec-in-progress-extension.svg?branch=master)](https://travis-ci.org/Brunty/phpspec-in-progress-extension)
+[![Build Status](https://travis-ci.org/Brunty/phpspec-skip-work-in-progress-extension.svg?branch=master)](https://travis-ci.org/Brunty/phpspec-skip-work-in-progress-extension)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/e073ed3e-34a5-498b-a5af-93149709c30a/mini.png)](https://insight.sensiolabs.com/projects/e073ed3e-34a5-498b-a5af-93149709c30a)
 
 ## Compatibility
